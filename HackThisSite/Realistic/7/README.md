@@ -7,7 +7,7 @@ Click one of those pictures, we realize all the images are located in the /image
 Then go back to showimages.php. Try to replace the value of 'file' parameter with images/.htaccess. Nope! Then try images/admin/.htaccess. Got it! Four images cannot be displayed. Check the source code. The AuthUserFile is lying under ```/www/hatkthissite.org/www/missions/realistic/7/images/admin/.htpasswd```. Have another try to open the .htpasswd file through showimages.php. 
 
 Then we get the username and encrypted password pair:
-```administrator:$1$AAODv...$gXPqGkIO3Cu6dnclE/sok1``
+```administrator:$1$AAODv...$gXPqGkIO3Cu6dnclE/sok1```
 
 Use John the Pipper to crack it!
 ```
